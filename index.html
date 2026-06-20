@@ -89,7 +89,8 @@
     }
 
     .nav-bottom-row .nav-links a:hover {
-      color: var(--green);
+      color: #ffffff;
+      opacity: 0.75;
     }
 
     .nav-bottom-row .nav-cta {
@@ -1372,7 +1373,8 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => {
-          link.style.color = link.getAttribute('href') === `#${entry.target.id}` ? '#3AB54A' : '';
+          link.style.color = link.getAttribute('href') === `#${entry.target.id}` ? '#ffffff' : '';
+        link.style.opacity = link.getAttribute('href') === `#${entry.target.id}` ? '0.75' : '1';
         });
       }
     });
