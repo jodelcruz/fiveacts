@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: auto;">
 <head>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.onbeforeunload = function() {
+      window.scrollTo(0, 0);
+    };
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Five Acts Services Corp — Secure. Reliable. Remote.</title>
@@ -1942,17 +1950,7 @@
   const contactTitle = document.getElementById('contact-title');
   if (contactTitle) sweepObserver.observe(contactTitle);
 
-  // Scroll to top on page load
-  window.addEventListener('load', function() {
-    window.scrollTo(0, 0);
-  });
 
-  // Also handle browser back/forward cache
-  window.addEventListener('pageshow', function(e) {
-    if (e.persisted) {
-      window.scrollTo(0, 0);
-    }
-  });
 </script>
 
 </body>
