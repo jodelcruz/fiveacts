@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: auto;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1941,6 +1941,18 @@
 
   const contactTitle = document.getElementById('contact-title');
   if (contactTitle) sweepObserver.observe(contactTitle);
+
+  // Scroll to top on page load
+  window.addEventListener('load', function() {
+    window.scrollTo(0, 0);
+  });
+
+  // Also handle browser back/forward cache
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      window.scrollTo(0, 0);
+    }
+  });
 </script>
 
 </body>
